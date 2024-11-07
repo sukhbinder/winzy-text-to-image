@@ -78,6 +78,9 @@ def download_image(
         url += f"&model={model}"
 
     response = requests.get(url)
+    if response.status_code != 200:
+        print(f"Error: Response Code: {response.status_code}")
+        print(f"{response.text}")
 
     if verbose:
         print(response)
