@@ -17,7 +17,15 @@ pip install winzy-text-to-image
 ```
 ## Usage
 
-Usage instructions go here.
+To create an image, use it like this.
+
+```bash
+winzy txt2img -p a punjabi family of four overloking a valley 
+```
+This produces this image.
+
+![Punjabi Family](punjabi-family.jpg)
+
 
 ## Development
 
