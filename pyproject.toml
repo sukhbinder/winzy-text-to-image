@@ -1,6 +1,6 @@
 [project]
 name = "winzy-text-to-image"
-version = "0.3"
+version = "0.4"
 description = "Generate text to image using pollinations.ai api"
 readme = "README.md"
 authors = [{name = "Sukhbinder Singh"}]

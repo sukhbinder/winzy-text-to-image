@@ -3,6 +3,7 @@ import requests
 import os
 import hashlib
 from datetime import datetime
+import sys
 
 
 def get_random_filename(ext=".jpg"):
@@ -17,11 +18,9 @@ def create_parser(subparser):
         "txt2img", description="Generate text to image using pollinations.ai api"
     )
     parser.add_argument(
-        "-p",
-        "--prompt",
+        "prompt",
         type=str,
         nargs="*",
-        required=True,
         help="Prompt for the image URL",
     )
     parser.add_argument(
@@ -66,8 +65,10 @@ def download_image(
 
     if prompt:
         prompt_str = " ".join(prompt)
+    else:
+        prompt_str = sys.stdin.read()
 
-    url = f"https://pollinations.ai/p/{prompt_str}"
+    url = f"https://pollinations.ai/p/{prompt_str.strip()}"
     if width:
         url += f"?width={width}"
     if height:
